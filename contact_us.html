@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  		<title>Contact Us</title>
+  		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+			<a class="navbar-brand" href="home.html">ABC Dental Care</a>
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="home.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about_us.html">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="our_services.html">Our Services</a>
+				</li>
+				<li>
+					<a class="nav-link active" href="contact_us.html">Contact Us</a>
+				</li>
+			</ul>
+		</nav>
+		<br>
+		<form id="contactForm">
+			<div class="form-group">
+				<label for="first_name">First Name</label>
+				<input type="text" class="form-control" id="first_name" placeholder="Enter your first name">
+			</div>
+			<div class="form-group">
+				<label for="last_name">Last Name</label>
+				<input type="text" class="form-control" id="last_name" placeholder="Enter your last name">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" id="email" placeholder="Enter your email">
+			</div>
+			<div class="form-group">
+				<label for="contact_number">Contact Number</label>
+				<input type="text" class="form-control" maxlength="10" id="contact_number" placeholder="Enter your contact number">
+			</div>
+			<div class="form-group">
+				<label for="concern">Your Area Of Concern</label>
+				<select name="concern" class="custom-select mb-3" id="concern">
+					<option value="concern1">Teeth Cleaning and Check-ups</option>
+					<option value="concern2">Dental Fillings</option>
+					<option value="concern3">Teeth Whitening</option>
+					<option value="concern4">Dental Crowns</option>
+					<option value="concern5">Dental Bridges</option>
+					<option value="concern6">Dental Implants</option>
+					<option value="concern7">Orthodontic Treatments</option>
+					<option value="concern8">Root Canal Therapy</option>
+					<option value="concern9">Gum Disease Treatment</option>
+					<option value="concern10">Wisdom Teeth Extraction</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="address">Address</label>
+				<textarea class="form-control" id="address" rows="3" placeholder="Enter your address"></textarea>
+			</div>
+			<button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+		</form>
+
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Thank You!</h5>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p>Your message has been sent successfully.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function submitForm() 
+			{
+				var first_name = document.getElementById('first_name').value;
+				var last_name = document.getElementById('last_name').value;
+				var email = document.getElementById('email').value;
+				var contact_number = document.getElementById('contact_number').value;
+				var concern = document.getElementById('concern').value
+				var address = document.getElementById('address').value;
+					if (first_name !== '' && last_name !== '' && email !== '' && contact_number !== '' && concern !== '' && address !== '') 
+				{
+					$('#myModal').modal('show');
+					document.getElementById('contactForm').reset();
+				}
+			}
+		</script>
+		<br>
+		<div class="jumbotron table-sm" style="margin-bottom:0">
+			<table class="table table-borderless">
+      				<tr>
+       					<td>Contact Number</td>
+       					<td>:</td>
+       					<td>+91 1234567890</td>
+    				</tr>
+      				<tr>
+						<td>Email</td>
+						<td>:</td>
+						<td>abcdentalcare@gmail.com</td>
+  					</tr>
+					<tr>
+						<td>Address</td>
+						<td>:</td>
+						<td>ABC Building, Near ABC Circle, At ABC Road, ABC, 123456</td>
+      				</tr>
+  			</table>
+		</div>
+	</body>
+</html>
